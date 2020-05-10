@@ -1,3 +1,16 @@
+/*
+0   - 600:  Phone
+601 - 900:  Tablet portrait
+901 - 1200: Tablet landscape
+1201+ :     Desktop
+
+$breakpoint argument choices:
+- phone
+- tab-port
+- tab-land
+
+ORDER: Base + typography > general layout + grid > page layout > components.
+*/
 @keyframes moveInLeft {
   0% {
     opacity: 0;
@@ -45,16 +58,25 @@
 
 html {
   font-size: 62.5%; }
+  @media (max-width: 75em) {
+    html {
+      font-size: 56.25%; } }
+  @media (max-width: 56.25em) {
+    html {
+      font-size: 50%; } }
 
 body {
-  box-sizing: border-box; }
+  box-sizing: border-box;
+  padding: 3rem; }
+  @media (max-width: 56.25em) {
+    body {
+      padding: 0; } }
 
 body {
   font-family: "Lato", sans-serif;
   font-weight: 400;
   line-height: 1.7;
-  color: #777;
-  padding: 3rem; }
+  color: #777; }
 
 .heading-primary {
   color: #fff;
@@ -67,6 +89,11 @@ body {
     letter-spacing: 3.5rem;
     animation: moveInLeft 1s ease-out;
     margin-right: -3.5rem; }
+    @media (max-width: 37.5em) {
+      .heading-primary--main {
+        letter-spacing: 1rem;
+        font-size: 5rem;
+        margin-right: 0rem; } }
   .heading-primary--sub {
     display: block;
     font-size: 2rem;
@@ -74,6 +101,10 @@ body {
     letter-spacing: 1.74rem;
     animation: moveInRight 1s ease-out;
     margin-right: -1.74rem; }
+    @media (max-width: 37.5em) {
+      .heading-primary--sub {
+        letter-spacing: 0.5rem;
+        margin-right: 0rem; } }
 
 .heading-secondary {
   font-size: 3.5rem;
@@ -86,6 +117,12 @@ body {
   color: transparent;
   letter-spacing: 0.2rem;
   transition: all 0.2s; }
+  @media (max-width: 56.25em) {
+    .heading-secondary {
+      font-size: 3rem; } }
+  @media (max-width: 37.5em) {
+    .heading-secondary {
+      font-size: 2.5rem; } }
   .heading-secondary:hover {
     transform: skew(15deg, 2deg) scale(1.1);
     text-shadow: 0.5rem 1rem 2rem rgba(0, 0, 0, 0.2); }
@@ -438,6 +475,10 @@ body {
   box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.1);
   text-align: center;
   cursor: pointer; }
+  @media (max-width: 56.25em) {
+    .navigation__button {
+      top: 4rem;
+      right: 5rem; } }
 
 .navigation__background {
   height: 5rem;
@@ -449,6 +490,10 @@ body {
   right: 7.5rem;
   z-index: 1;
   transition: transform 0.8s cubic-bezier(0.83, 0, 0.17, 1); }
+  @media (max-width: 56.25em) {
+    .navigation__background {
+      top: 4.5rem;
+      right: 5.5rem; } }
 
 .navigation__nav {
   height: 100vh;
@@ -645,7 +690,7 @@ body {
 
 .footer {
   background-color: #333;
-  padding: 10rem 0 5rem 0;
+  padding: 8rem 0 5rem 0;
   font-size: 1.4rem;
   color: #f7f7f7;
   text-align: center; }
@@ -688,8 +733,15 @@ body {
 .row {
   max-width: 114rem;
   margin: 0 auto; }
+  @media (max-width: 56.25em) {
+    .row {
+      width: 50rem;
+      padding: 0 3rem; } }
   .row:not(:last-child) {
     margin-bottom: 8rem; }
+    @media (max-width: 56.25em) {
+      .row:not(:last-child) {
+        margin-bottom: 4rem; } }
   .row::after {
     content: "";
     display: table;
@@ -698,6 +750,13 @@ body {
     float: left; }
     .row [class^="col-"]:not(:last-child) {
       margin-right: 6rem; }
+      @media (max-width: 56.25em) {
+        .row [class^="col-"]:not(:last-child) {
+          margin-right: 0;
+          margin-bottom: 4rem; } }
+    @media (max-width: 56.25em) {
+      .row [class^="col-"] {
+        width: 100% !important; } }
   .row .col-1-of-2 {
     width: calc((100% - 6rem) / 2); }
   .row .col-1-of-3 {
@@ -719,6 +778,10 @@ body {
   -webkit-clip-path: polygon(0 0, 0 100%, 100% 75vh, 100% 0);
   clip-path: polygon(0 0, 0 100%, 100% 75vh, 100% 0);
   position: relative; }
+  @media (max-width: 37.5em) {
+    .header {
+      -webkit-clip-path: polygon(0 0, 0 100%, 100% 85vh, 100% 0);
+      clip-path: polygon(0 0, 0 100%, 100% 85vh, 100% 0); } }
   .header__logo-box {
     position: absolute;
     top: 4rem;
