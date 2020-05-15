@@ -19,6 +19,11 @@ html {
     // 1rem is 8px (50% of 16px = 8px).
     font-size: 50%;
   }
+
+  @include respond(phone-small) {
+    // 1rem is 6.4px (40% of 16px = 6.4px).
+    font-size: 40%;
+  }
 }
 
 body {

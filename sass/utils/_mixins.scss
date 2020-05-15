@@ -15,7 +15,8 @@
 
 // MEDIA QUERRY MANAGER
 /*
-0   - 600:  Phone
+0   - 400:  Small phone
+401 - 600:  Phone
 601 - 900:  Tablet portrait
 901 - 1200: Tablet landscape
 1201+ :     Desktop
@@ -46,6 +47,13 @@ ORDER: Base + typography > general layout + grid > page layout > components.
   @if $breakpoint == phone {
     // 600px.
     @media (max-width: 37.5em) {
+      @content;
+    }
+  }
+
+  @if $breakpoint == phone-small {
+    // 400px.
+    @media (max-width: 25em) {
       @content;
     }
   }
