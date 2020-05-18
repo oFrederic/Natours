@@ -882,6 +882,9 @@ body {
   background-color: #f7f7f7;
   padding: 25rem 0;
   margin-top: -20vh; }
+  @media (max-width: 56.25em) {
+    .section-about {
+      text-align: center; } }
 
 .section-features {
   margin-top: -12rem;
