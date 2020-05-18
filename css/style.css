@@ -67,7 +67,7 @@ html {
       font-size: 50%; } }
   @media (max-width: 25em) {
     html {
-      font-size: 40%; } }
+      font-size: 35%; } }
 
 body {
   box-sizing: border-box;

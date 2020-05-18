@@ -22,7 +22,7 @@ html {
 
   @include respond(phone-small) {
     // 1rem is 6.4px (40% of 16px = 6.4px).
-    font-size: 40%;
+    font-size: 35%;
   }
 }
 
