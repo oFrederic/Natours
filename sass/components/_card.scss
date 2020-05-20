@@ -1,7 +1,5 @@
 .card {
   // FUNCTIONALITY
-  -moz-perspective: 150rem;
-  -webkit-perspective: 150rem;
   perspective: 150rem;
   position: relative;
   height: 52rem;
@@ -13,7 +11,6 @@
     position: absolute;
     top: 0;
     left: 0;
-    -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
     border-radius: 3px;
     overflow: hidden;
@@ -53,7 +50,6 @@
     background-size: cover;
     height: 23rem;
     background-blend-mode: overlay;
-    -webkit-clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
     clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
 
     &--1 {
