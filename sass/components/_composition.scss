@@ -47,7 +47,7 @@
       }
     }
 
-    @media (min-width: 56.26em) {
+    @media only screen and (min-width: 56.25em) and (hover: hover) {
       &:hover {
         outline-offset: 2rem;
         outline: 1.5rem solid $color-primary;
