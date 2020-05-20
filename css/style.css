@@ -353,8 +353,7 @@ body {
         box-shadow: none; }
         .card__side--back {
           transform: rotateY(0);
-          clip-path: polygon(0 15%, 100% 0, 100% 100%, 0 100%);
-          -webkit-clip-path: polygon(0 15%, 100% 0, 100% 100%, 0 100%); }
+          clip-path: polygon(0 15%, 100% 0, 100% 100%, 0 100%); }
       .card:hover .card__side--front {
         transform: rotateY(0); }
       .card__details {
@@ -660,9 +659,8 @@ body {
   visibility: hidden;
   opacity: 0;
   transition: all 0.3s; }
-  @supports (-webkit-backdrop-filter: blur(10px)) or (background-color: rgba(0, 0, 0, 0.3)) {
+  @supports (backdrop-filter: blur(10px)) {
     .popup {
-      -webkit-backdrop-filter: blur(10px);
       backdrop-filter: blur(10px);
       background-color: rgba(0, 0, 0, 0.3); } }
   .popup__content {
@@ -697,11 +695,7 @@ body {
     font-size: 1.4rem;
     column-count: 2;
     column-gap: 4rem;
-    column-rule: 1px solid #eee;
-    -moz-hyphens: auto;
-    -ms-hyphens: auto;
-    -webkit-hyphens: auto;
-    hyphens: auto; }
+    column-rule: 1px solid #eee; }
   .popup:target {
     visibility: visible;
     opacity: 1; }
@@ -749,11 +743,9 @@ body {
     transform: translateX(-3rem) skewX(12deg);
     overflow: hidden;
     border-radius: 50%; }
-    @supports (clip-path: circle(50% at 50% 50%)) or (-webkit-clip-path: circle(50% at 50% 50%)) {
+    @supports (clip-path: circle(50% at 50% 50%)) {
       .story__shape {
-        -webkit-clip-path: circle(50% at 50% 50%);
         clip-path: circle(50% at 50% 50%);
-        -webkit-shape-outside: circle(50% at 50% 50%);
         shape-outside: circle(50% at 50% 50%);
         border-radius: none; } }
     @media (max-width: 37.5em) {
@@ -868,21 +860,16 @@ body {
   background-image: linear-gradient(135deg, rgba(126, 213, 111, 0.5), rgba(40, 180, 133, 0.5)), url(../img/hero-small.jpg);
   background-size: cover;
   background-position: top;
-  -webkit-clip-path: polygon(0 0, 0 100%, 100% 75vh, 100% 0);
-  clip-path: polygon(0 0, 0 100%, 100% 75vh, 100% 0);
   position: relative; }
-
-@support (clip-path: polygon(0 0, 0 100%, 100% 75vh, 100% 0)) or (-webkit-clip-path: polygon(0 0, 0 100%, 100% 75vh, 100% 0)) {
-  .header {
-    height: 95vh;
-    -webkit-clip-path: polygon(0 0, 0 100%, 100% 75vh, 100% 0);
-    clip-path: polygon(0 0, 0 100%, 100% 75vh, 100% 0); } }
+  @supports (clip-path: polygon(0 0, 0 100%, 100% 75vh, 100% 0)) {
+    .header {
+      height: 95vh;
+      clip-path: polygon(0 0, 0 100%, 100% 75vh, 100% 0); } }
   @media (min-resolution: 192dpi) and (min-width: 37.5em), (-webkit-min-device-pixel-ration: 2) and (min-width: 37.5em), (min-width: 125em) {
     .header {
       background-image: linear-gradient(135deg, rgba(126, 213, 111, 0.5), rgba(40, 180, 133, 0.5)), url(../img/hero.jpg); } }
   @media (max-width: 37.5em) {
     .header {
-      -webkit-clip-path: polygon(0 0, 0 100%, 100% 85vh, 100% 0);
       clip-path: polygon(0 0, 0 100%, 100% 85vh, 100% 0); } }
   .header__logo-box {
     position: absolute;
